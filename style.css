@@ -137,12 +137,46 @@ html{
 
 .cata{
   background-image: url("./media/jsk\ bg.jpg");
-  background-size: cover;           /* Fully covers width + height */
-  background-position: center top;  /* Align like BookMyShow */
+  background-size: cover;           
+  background-position: center top;  
   background-repeat: no-repeat;
   height: 80vh;
-  /* position: relative; */
-  /* z-index: 1; */
+    background-color: rgba(17, 17, 17, 0.76);
+
+}
+.cata2{
+  background-image: url("./media/mareesan\ bg.webp");
+  background-size: cover;           
+  background-position: center top;  
+  background-repeat: no-repeat;
+  height: 80vh;
+    background-color: rgba(17, 17, 17, 0.76);
+
+}
+.cata3{
+  background-image: url("./media/saiyaara\ bg.avif");
+  background-size: cover;           
+  background-position: center top;  
+  background-repeat: no-repeat;
+  height: 80vh;
+    background-color: rgba(17, 17, 17, 0.76);
+
+}
+.cata4{
+  background-image: url("./media/thailvi\ bg.webp");
+  background-size: cover;           
+  background-position: center top;  
+  background-repeat: no-repeat;
+  height: 80vh;
+    background-color: rgba(17, 17, 17, 0.76);
+
+}
+.cata5{
+  background-image: url("./media/superman\ bg.jpg");
+  background-size: cover;           
+  background-position: center top;  
+  background-repeat: no-repeat;
+  height: 80vh;
     background-color: rgba(17, 17, 17, 0.76);
 
 }
@@ -172,4 +206,8 @@ html{
       padding: 12px 80px;
       border-radius: 10px;
       font-size: 18px;
+    }
+    #recomeded-movies a{
+      text-decoration: none;
+      color:#444343;
     }
