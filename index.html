@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BookMyShow - Clone</title>
+    <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="./media/fav.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header id="into">
+        <nav class="navbar navbar-expand-lg  bg-white">
+            <div class="container-fluid">
+                <button class="navbar-toggler order-0 order-lg-1" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="d-flex align-items-center gap-3">
+                    <a id="logo" class="navbar-brand order-1 order-lg-0 text-dark ms-md-5 me-md-0 me-5  mx-auto d-block"
+                        href="#intro"><img src="./media/real logo.svg" width="110px" alt=""></a>
+                    <form class=" d-none d-md-flex " style="position: relative;" role="search">
+                        <i class="fa-solid fa-magnifying-glass"
+                            style="position:relative; left: 25px; top: 10px; color: #2b3148 "></i>
+                        <input class="form-control   me-2" type="search"
+                            style=" font-size: 14px; color: rgb(153, 153, 153); outline: 0%; padding-left:40px "
+                            placeholder="Search for Movies, Events, Plays, Sports and Activities" aria-label="Search"
+                            height="10px" size="60">
+                    </form>
+                </div>
+                <div class="collapse navbar-collapse order-0 order-lg-1" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav ms-auto ">
+                        <li class="nav-item  ">
+                            <form class=" d-md-none d-flex mb-md-0 mb-2 my-md-0 my-3 ms-md-0 ms-2  "
+                                style="position: relative;" role="search">
+                                <i class="fa-solid fa-magnifying-glass"
+                                    style="position:relative; left: 25px; top: 10px; color: #2b3148 "></i>
+                                <input class="form-control   me-2" type="search"
+                                    style=" font-size: 14px; color: rgb(153, 153, 153); outline: 0%; padding-left:40px "
+                                    placeholder="Search for Movies, Events, Plays, Sports and Activities"
+                                    aria-label="Search">
+                            </form>
+                        </li>
+                        <li class="navbar-nav ms-md-5 ms-5 my-md-0 mb-md-0 mb-3">
+                            <a href="#" class="text-dark text-decoration-none" data-bs-toggle="modal"
+                                data-bs-target="#locationModal">
+                                <i class="fa-solid fa-location-dot me-1 "></i> Select Location
+                            </a>
+                        </li>
+                        <li class="navbar-nav   ">
+                            <a href="login.html" style="text-decoration: none;">
+                                <button type="button" class="btn btn-danger me-4 ms-md-4 ms-5 mb-md-0 mb-3 text-light"
+                                    style="font-size: 14px; width: 67px; height: 25px; text-align: center; padding: 1px; background-color: rgb(248, 68, 100); border-radius: 4px; border: 1px solid rgb(248, 68, 100); display: block;">  Sign in
+                                </button>
+                            </a>
+
+                        </li>
+                        </li>
+                        <li class="navbar-nav ms-5  d-md-none">
+                            <a class="nav-link   " href="#">Movies</a>
+                        </li>
+                        <li class="navbar-nav ms-5 d-md-none">
+                            <a class="nav-link text-dark" href="#">Stream</a>
+                        </li>
+                        <li class="navbar-nav ms-5 d-md-none">
+                            <a class="nav-link text-dark" href="#">Events</a>
+                        </li>
+                        <li class="navbar-nav  ">
+                            <button class=" btn d-inline-flex me-md-5 mb-md-0 mb-3  ms-5 ms-md-0 px-2 py-1"
+                                type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                                aria-controls="offcanvasRight">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- SECONDARY NAVBAR -->
+        <nav class="navbar navbar-expand-lg  d-md-flex d-none  bg-white text-dark" id="navbarTogglerDemo03">
+            <div class="container-fluid">
+                <ul class="navbar-nav d-flex flex-row gap-1 ms-5 fs-6">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#recomeded-movies">Movies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#premieres">Stream</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#music">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#laughter">Plays</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#sports">Sports</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-flex flex-row gap-1 me-5 fs-6">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#footer">ListYourShow</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#offcanvasRight">Corporates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#offcanvasRight">Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#offcanvasRight">Gift Cards</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Right Slide Panel  -->
+        <div  class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title fw-bold fs-3" id="offcanvasRightLabel">Hey!</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <hr>
+            <br>
+            <div style="margin-top: -40px;" class="offcanvas-body ">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <img src="./media/rewards.webp" alt="">
+                    <span class=" ms-3">Unlock special offers & great benefits</span>
+                   <a href="login.html"> <button style="width: 130px; height: 50px;" class="btn ms-1 btn-outline-danger btn-sm">Login /
+                        Register</button></a>
+                </div>
+                <hr>
+                <ul class="list-group list-group-flush text-dark">
+                    <li class="text-dark list-group-item"><i class="fa fa-bell me-2"></i>Notifications</li>
+                    <li class="text-dark list-group-item "><i class="fa fa-box me-2"></i>Your Orders <br>
+                        <p class="text-dark ms-4">View all your bookins & purchases</p>
+                    </li>
+                    <li style="margin-top: -17px;" style="margin-top: -17px;" class="text-dark list-group-item "><i
+                            class="fa fa-film me-2"></i>Stream Library <br>
+                        <p class="text-dark ms-4">Rented & Purchased Movies</p>
+                    </li>
+                    <li style="margin-top: -17px;" class="text-dark list-group-item"><i
+                            class="fa fa-credit-card me-2"></i>Play
+                        Credit Card <br>
+                        <p class="text-dark ms-4">View all your Play Credit Card details</p>
+                    </li>
+                    <li style="margin-top: -15px;" class="text-dark list-group-item"><i
+                            class="fa fa-question-circle me-2"></i>Help & Support </li>
+                    <li class="text-dark list-group-item"><i class="fa fa-cog me-2"></i>Accounts & Settings </li>
+                    <li class="text-dark list-group-item"><i class="fa fa-gift me-2"></i>Rewards </li>
+                    <li class="text-dark list-group-item"><i class="fa fa-exchange-alt me-2"></i>BookAChange </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Location MODAL  -->
+
+        <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="d-flex flex-column gap-3">
+                            <h5 style="color: rgb(248, 68, 100)" class="modal-title" id="locationModalLabel"> Choose
+                                Your Location</h5>
+                            <form class="d-flex  " style="position: relative;" role="search">
+                                <i class="fa-solid fa-magnifying-glass"
+                                    style="position:relative; left: 25px; top: 10px; color: #2b3148 "></i>
+                                <input class="form-control   me-2" type="search"
+                                    style=" font-size: 16px; color: rgb(153, 153, 153); outline: 0%; padding-left:40px "
+                                    placeholder="Search for your city" aria-label="Search" height="10px" size="60">
+                            </form>
+                        </div>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <h5 style="color: rgb(248, 68, 100); font-size:19px" class="text-center py-1 mt-4 ">Popular Cities
+                    </h5>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class=" row ">
+                                <div class=" cooli col-md-2 col-6 ">
+                                    <div class="card  cooli align-items-center" style="width: auto;">
+                                        <img src="https://in.bmscdn.com/m6/images/common-modules/regions/koch.png"
+                                            alt="Kochi" width="70px" height="auto" class=" align-items-center">
+                                        <div class="card-body">
+                                            <h5 class="card-title align-items-center">Kochi</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cooli col-md-2 col-6">
+                                    <div class="card align-items-center" style="width: auto;">
+                                        <img src="https://in.bmscdn.com/m6/images/common-modules/regions/bang.png"
+                                            alt="Kochi" width="70px" height="auto" class=" align-items-center">
+                                        <div class="card-body">
+                                            <h5 class="card-title align-items-center">Bengaluru</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cooli col-md-2 col-6">
+                                    <div class="card align-items-center" style="width: auto;">
+                                        <img src="https://in.bmscdn.com/m6/images/common-modules/regions/mumbai.png"
+                                            alt="Kochi" width="70px" height="auto" class=" align-items-center">
+                                        <div class="card-body">
+                                            <h5 class="card-title align-items-center">Mumbai</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cooli col-md-2 col-6">
+                                    <div class="card align-items-center" style="width: auto;">
+                                        <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chen.png"
+                                            alt="Kochi" width="70px" height="auto" class=" align-items-center">
+                                        <div class="card-body">
+                                            <h5 class="card-title align-items-center">Chennai</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cooli col-md-2 col-6">
+                                    <div class="card align-items-center" style="width: auto;">
+                                        <img src="https://in.bmscdn.com/m6/images/common-modules/regions/chd.png"
+                                            alt="Kochi" width="70px" height="auto" class=" align-items-center">
+                                        <div class="card-body">
+                                            <h5 class="card-title align-items-center">Chandigarh</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cooli col-md-2 col-6">
+                                    <div class="card align-items-center" style="width: auto;">
+                                        <img src="https://in.bmscdn.com/m6/images/common-modules/regions/kolk.png"
+                                            alt="Kochi" width="70px" height="auto" class=" align-items-center">
+                                        <div class="card-body">
+                                            <h5 class="card-title align-items-center">Hyderabad</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h5 style="color: rgb(248, 68, 100); font-size:19px" class="text-center py-1 mt-1 mb-3">View All
+                        Cities</h5>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="ted" class="pb-5">
+        <!-- BANNER  -->
+        <div id="carouselExampleRide" class="carousel bg-transparent slide" data-bs-ride="carousel"
+            data-bs-pause="false" data-bs-interval="2500" data-bs-wrap="true">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="0"
+                    class=" border-0 rounded-circle py-1 " aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to="1"
+                    class="active border-0 rounded-circle py-1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleRide" data-bs-slide-to=#carouselExampleRide"
+                    class="active border-0 rounded-circle py-1" aria-label="Slide 2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./media/b1.avif" class="d-block w-100 " height="330" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./media/chaplin.jpg" class="d-block w-100" height="330" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="./media/dragon.avif" class="d-block w-100" height="330" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- RECOMENDED MOVIES  -->
+        <div id="recomeded-movies" class="px-4">
+            <h1 class="my-3 ms-4" style=" font-size: 24px; font-weight: 700;">Recommended Movies</h1>
+            <div id="movieCarousel" style="overflow: auto;" class="container-fluid movie-scroll py-2">
+                <div class="d-flex flex-row flex-nowrap ">
+                    <div class=" me-4  card bg-transparent border-0" style="min-width:235px; ">
+                       <a href="moviebook.html"><img src="./media/jsk.avif" class="object-fit-cover  card-img-top" alt="..."></a>
+                        <div class="card-body border-0">
+                            <h5 class="text-dark fw-bold card-title">JSK-Janaki vs State of Kerala</h5>
+                            <p class="card-text">Action/Drama/Thriller</p>
+                        </div>
+                    </div>
+                    <div class=" me-4 card bg-transparent border-0" style="min-width:235px;">
+                        <img src="./media/saiyaara.avif" class="object-fit-cover  card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Saiyaara</h5>
+                            <p class="card-text">Action/Drama/Thriller</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent border-0" style="min-width:235px;">
+                        <img src="./media/superman.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Superman</h5>
+                            <p class="card-text">Romantic/Drama/Musical</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent border-0" style="min-width:235px;">
+                        <img src="./media/maareesan.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Maareesan</h5>
+                            <p class="card-text">Action/Adventure/Sci-Fi</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent border-0" style="min-width:235px;">
+                        <img src="./media/thalaivan thalaivii.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Thalaivan Thalaivii</h5>
+                            <p class="card-text">Comedy/Drama/Romantic</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent border-0" style="min-width:235px;">
+                        <img src="./media/f1.avif" class="object-fit-cover  height=" 100%" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">F1: The Movie</h5>
+                            <p class="card-text">Action/Drama/Sports</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent border-0" style="min-width:235px;">
+                        <img src="./media/fasntastic.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class=" ms-1 me-4 card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">The Fantastic Four: First Steps</h5>
+                            <p class="card-text">Action/Adventure/Sci-Fi</p>
+                        </div>
+                    </div>
+                    <!-- 2ND ROW  -->
+                    <div class="me-4 card  bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/jurassic.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Jurassic World: Rebirth</h5>
+                            <p class="card-text">Action/Sci-Fi/Thriller</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/apoorva.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Apoorva Puthranmaar</h5>
+                            <p class="card-text">Comedy/Thriller</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/raveendra.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Raveendra Nee Evide</h5>
+                            <p class="card-text">Comedy/Family/Thriller</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/flask.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title">Flask</h5>
+                            <p class="card-text">Comedy/Drama/Thriller</p>
+                        </div>
+                    </div>
+                    <div class=" card  bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/hari hara.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Hari Hara Veera Mallu - Part 1 Sword vs Spirit</h5>
+                            <p class="card-text">Action/Adventure/Period</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BANNER  -->
+        <div class=" px-4 ">
+            <img src="./media/endles.avif" class="img-fluid w-100" width="1100px" style=" max-height: 85px;" alt="">
+        </div>
+
+        <!-- BEST OF LIVE EVENTS -->
+        <div id="hwee" class="px-5  my-5">
+            <h1 class="my-3 ms-4" style=" font-size: 24px; font-weight: 700;">The Best Of Live Events</h1>
+            <div class="row justify-content-center ">
+                <div class="col-6 col-sm-4 col-md-3 col-lg  my-2">
+                    <img src="./media/comedy-shows-collection-202211140440.avif" class="img-fluid rounded" alt="">
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg  my-2">
+                    <img src="./media/amusement-parks-banner-desktop-collection-202503251132.avif"
+                        class="img-fluid rounded" alt="">
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg   my-2">
+                    <img src="./media/kids-banner-desktop-collection-202503251132.avif" class="img-fluid  rounded"
+                        alt="">
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg  my-2">
+                    <img src="./media/music-shows-collection-202211140440.avif" class="img-fluid rounded" alt="">
+                </div>
+                <div class="col-6 col-sm-4 col-md-3 col-lg  my-2">
+                    <img src="./media/workshop-and-more-web-collection-202211140440.avif" class="img-fluid rounded"
+                        alt="">
+                </div>
+            </div>
+        </div>
+
+        <!-- PRIMIERES -->
+
+        <div id="premieres" style="background-color: #2b3148;">
+            <div class="container-fluid px-5">
+                <img src="./media/play.avif" class="ms-4 ms-md-3 my-3" height="100px" alt="">
+                <h1 class="ms-4 text-light" style="font-size: 24px; font-weight: 700;">Premieres</h1>
+                <p class="text-light ms-4">Brand new releases every Friday</p>
+                <div id="movieCarousel" class="container-fluid movie-scroll py-2 px-3"
+                    style="overflow-x: auto; white-space: nowrap;">
+                    <div class="d-flex flex-row flex-nowrap gap-4">
+                        <div class="bg-transparent text-light card border-0" style="min-width:230px;">
+                            <img src="./media/not today.avif" class="object-fit-cover rounded-1 card-img-top" alt="...">
+                            <div class="card-body border-0">
+                                <h5 class="text-light fw-bold card-title">Not Today</h5>
+                                <p class="card-text">Hindi</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-transparent text-light" style="min-width:230px;">
+                            <img src="./media/whiteout.avif" class="object-fit-cover card-img-top" alt="...">
+                            <div class="card-body border-0">
+                                <h5 class="card-title fw-bold">White Out</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-transparent text-light" style="min-width:230px;">
+                            <img src="./media/turno.avif" class="object-fit-cover card-img-top" alt="...">
+                            <div class="card-body border-0">
+                                <h5 class="card-title fw-bold">Turno Nocturno</h5>
+                                <p class="card-text">Spanish</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-transparent text-light" style="min-width:230px;">
+                            <img src="./media/winter.avif" class="object-fit-cover card-img-top" alt="...">
+                            <div class="card-body border-0">
+                                <h5 class="card-title fw-bold">Winter Spring Summer or Fall</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-transparent text-light" style="min-width:230px;">
+                            <img src="./media/vidya.avif" class="object-fit-cover card-img-top" alt="...">
+                            <div class="card-body border-0">
+                                <h5 class="card-title fw-bold">Vidya Vasula Aham</h5>
+                                <p class="card-text">Telugu</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-transparent text-light" style="min-width:230px;">
+                            <img src="./media/chap.avif" class="object-fit-cover card-img-top" alt="...">
+                            <div class="card-body border-0">
+                                <h5 class="card-title fw-bold">Chaplin: Spirit of the Tramp</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-transparent text-light" style="min-width:230px;">
+                            <img src="./media/ghode.avif" class="object-fit-cover card-img-top" alt="...">
+                            <div class="card-body border-0">
+                                <h5 class="card-title fw-bold">Ghode Ko Jalebi Khilane</h5>
+                                <p class="card-text">Hindi</p>
+                            </div>
+                        </div>
+                        <div class="card border-0 bg-transparent text-light" style="min-width:230px;">
+                            <img src="./media/red lorry.avif" class="object-fit-cover card-img-top" alt="...">
+                            <div class="card-body border-0">
+                                <h5 class="card-title fw-bold">Red Lorry Flim Festival</h5>
+                                <p class="card-text">English</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MUSIC STUDIO  -->
+
+        <div id="music" class="px-4">
+            <h1 class="my-3 mt-5 ms-3" style=" font-size: 24px; font-weight: 700;">Your Music Studio</h1>
+            <div id="movieCarousel" style="overflow: auto;" class="container-fluid movie-scroll py-2">
+                <div class="d-flex flex-row flex-nowrap ">
+                    <div class=" me-4  card bg-transparent  border-0" style="min-width:235px; ">
+                        <img src="./media/taylor.avif" class="object-fit-cover  card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="text-dark fw-bold card-title">Taylor Swift : Cruel Summer Party Edition</h5>
+                            <p class="card-text">Venue To be Announced: Kochi Club Gigs</p>
+                        </div>
+                    </div>
+                    <div class=" me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/afterverse.avif" class="object-fit-cover  card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Afterverse – A The Weeknd Themed Fan Event</h5>
+                            <p class="card-text">Venue To be Announced: Kochi Club Gigs</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/sewtha.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Shweta Mohan Live</h5>
+                            <p class="card-text">Venue To be Announced: Kochi Concerts </p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/Vineeth Sreenivasan Live  Prestige Forum Mall.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Vineeth Sreenivasan Live</h5>
+                            <p class="card-text">Prestige Forum Mall: Kochi Concerts </p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/direction.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Directionia – A One Direction Themed Fan Event</h5>
+                            <p class="card-text">Venue To be Announced: Kochi Club Gigs </p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/passenger.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Passenger India Tour 2025 - Bengaluru</h5>
+                            <p class="card-text ">Phoenix Marketcity, Whitefield: Bengaluru</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/travis.avif" class="object-fit-cover   alt=" ...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Travis Scott: Circus Maximum Stadium Tour</h5>
+                            <p class="card-text">Mahalaxmi Race Course: Mumbai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LAUGHTER THERAPY  -->
+
+        <div id="laughter" class="px-4">
+            <h1 class="my-3 mt-1 ms-3" style=" font-size: 24px; font-weight: 700;">Laughter Therapy</h1>
+            <div id="movieCarousel" style="overflow: auto;" class="container-fluid movie-scroll py-2">
+                <div class="d-flex flex-row flex-nowrap ">
+                    <div class=" me-4  card bg-transparent  border-0" style="min-width:235px; ">
+                        <img src="./media/kisi ko batana.avif" class="object-fit-cover  card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="text-dark fw-bold card-title">Kisi Ko Batana Mat Ft. Anubhav Singh Bassi</h5>
+                            <p class="card-text">Father Muller Convention</p>
+                        </div>
+                    </div>
+                    <div class=" me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/punit.avif" class="object-fit-cover  card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Punit Pania Live In Khar</h5>
+                            <p class="card-text">Out Of The Blue: Khar</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/mahadevan.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">MaHAHdevan Live! A Mlayalam Croud Work...</h5>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/death.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Death by Laughter Ft. Vivek Muralidharan</h5>
+                            <p class="card-text">The Comedy Theatre </p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/kooduthal.avif" class="object-fit-cover   alt=" ...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Kooduthal Chinthikkanda</h5>
+                            <p class="card-text">JT Performing Arts Kochi</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/unitested.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">UNITESTED</h5>
+                            <p class="card-text">Spotlight Socials: Kochi</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/chalta.avif" class="object-fit-cover  alt=" ...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Chalta Hai Comedy</h5>
+                            <p class="card-text">Multiple Venues</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/comedy ladder.avif" class="object-fit-cover  alt=" ...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Comedy Ladder</h5>
+                            <p class="card-text">Multiple Venues</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/ancool by anu.avif" class="object-fit-cover   alt=" ...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">ANCOOL by Anu Menon</h5>
+                            <p class="card-text">Cochin Palace: kochi </p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/kochi.avif" class="object-fit-cover   alt=" ...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Kochi Open Mics</h5>
+                            <p class="card-text">Spotlight Socials: Kochi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SPORTS  -->
+
+        <div id="sports" class="px-4">
+            <h1 class="my-3 mt-1 ms-3" style=" font-size: 24px; font-weight: 700;">Top Games & Sport Events</h1>
+            <div id="movieCarousel" style="overflow: auto;" class="container-fluid movie-scroll py-2">
+                <div class="d-flex flex-row flex-nowrap ">
+                    <div class=" me-4  card bg-transparent  border-0" style="min-width:235px; ">
+                        <img src="./media/run.avif" class="object-fit-cover  card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="text-dark fw-bold card-title"> Run For Fitness Marathon Get Medal by Courier
+                            </h5>
+                            <p class="card-text">Your Place and Your Time: India </p>
+                        </div>
+                    </div>
+                    <div class=" me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/neon.avif" class="object-fit-cover  card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold"> Neon Run 21 KM Get a beautiful medal by Courier
+                            </h5>
+                            <p class="card-text"> Your Place and Your Time: India</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/miles.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Miles Of Glory 2025 Marathon Run.</h5>
+                            <p class="card-text"> Your Place and Your Time: India</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/infinity.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Infinity Chess Championship </h5>
+                            <p class="card-text">Your Place and Your Time: India</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/marathon.avif" class="object-fit-cover   alt=" ...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">India Marathon - Get T-shirt & Medal by Courier
+                            </h5>
+                            <p class="card-text">Your Place and Your Time: India</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/rook.avif" class="object-fit-cover card-img-top" alt="...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">RookTook Chess Puzzle Championship </h5>
+                            <p class="card-text">Your Place and Your Time: India</p>
+                        </div>
+                    </div>
+                    <div class="me-4 card bg-transparent  border-0" style="min-width:235px;">
+                        <img src="./media/chess.avif" class="object-fit-cover  alt=" ...">
+                        <div class="card-body border-0">
+                            <h5 class="card-title text-dark fw-bold">Chess Royal Championship </h5>
+                            <p class="card-text">Your Place and Your Time: India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEARCHE  -->
+
+        <div id="search" class="ms-5 my-4">
+            <h4 class="fw-bold mb-4">Trending Searches Right Now</h4>
+            <div class="row fs-5 g-3">
+                <div class="col-6 col-lg-2">
+                    <div class="bg-white p-2   text-start">
+                        <div class="text-danger fw-semibold">Saiyaara</div>
+                        <small>Movies</small>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <div class="bg-white p-2 rounded  text-start">
+                        <div class="text-danger fw-semibold">Coolie</div>
+                        <small>Movies</small>
+                    </div>
+                </div>
+                <div class="col-6  col-lg-3">
+                    <div class="bg-white p-2 rounded  text-start">
+                        <div class="text-danger fw-semibold">The Fantastic Four: First Steps</div>
+                        <small>Movies</small>
+                    </div>
+                </div>
+                <div class="col-6  col-lg-2">
+                    <div class="bg-white p-2 rounded  text-start">
+                        <div class="text-danger fw-semibold">F1: The Movie</div>
+                        <small>Movies</small>
+                    </div>
+                </div>
+                <div class="col-6  col-lg-2">
+                    <div class="bg-white p-2 rounded  text-start">
+                        <div class="text-danger fw-semibold">Superman</div>
+                        <small>Movies</small>
+                    </div>
+                </div>
+                <div class="col-6  col-lg-2">
+                    <div class="bg-white p-2 rounded  text-start">
+                        <div class="text-danger fw-semibold">Thalaivan Thalaivii</div>
+                        <small>Movies</small>
+                    </div>
+                </div>
+                <div class="col-6  col-lg-3">
+                    <div class="bg-white p-2 rounded  text-start">
+                        <div class="text-danger fw-semibold">Ghajini (Tamil)</div>
+                        <small>Movies</small>
+                    </div>
+                </div>
+                <div class="col-12  col-lg-6">
+                    <div class="p-2  rounded bg-white text-start">
+                        <div class="text-danger fw-semibold">Demon Slayer - Kimetsu no Yaiba - The Movie: Infinity
+                            Castle</div>
+                        <small>Movies</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="foot" style="background-color: #222539; color: #ffffff;">
+        <div class="py-5  ">
+            <div class="row mx-5 align-items-center gy-3">
+                <div class="col-lg-9  d-flex flex-wrap align-items-center">
+                    <img src="./media/hut.svg" alt="icon" class="me-3 mb-2" width="40">
+                    <div>
+                        <h1 class="mb-1" style="font-size: 18px; font-weight: 800;">List your Show</h1>
+                        <h1 class="mb-0" style="font-size: 16px;">
+                            Got a show, event, activity or a great experience? Partner with us & get listed on
+                            BookMyShow
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 text-lg-end text-start">
+                    <button type="button" class="btn text-light"
+                        style="font-size: 16px; font-weight: 600; width: 145px; height: 45px; background-color: rgb(248, 68, 100); border-radius: 4px; border: 1px solid rgb(248, 68, 100);">
+                        Contact Today!
+                    </button>
+                </div>
+            </div>
+            <div class="row text-center mt-5 mb-5 py-4" style="background-color: #626263; border-radius: 8px;">
+                <div class="col-12 col-sm-4 mb-3 mb-sm-0">
+                    <a href="https://support.bookmyshow.com/support/home?regionCode=NCR"><img
+                            src="./media/customer-care.png" width="55" alt="Customer Care"></a>
+                    <div class="mt-2">
+                        <small class="text-white fw-semibold">24/7 CUSTOMER CARE</small>
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-sm-4 mb-3 mb-sm-0">
+                    <img src="./media/movies.png" width="55" alt="Resend Booking">
+                    <div class="mt-2">
+                        <small class="text-white fw-semibold">RESEND BOOKING CONFIRMATION</small>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-4">
+                    <img src="./media/newsletter (1).png" width="55" alt="Newsletter">
+                    <div class="mt-2">
+                        <small class="text-white fw-semibold">SUBSCRIBE TO THE NEWSLETTER</small>
+                    </div>
+                </div>
+            </div>
+
+            <div id="elogo" class="my-5 ">
+                <span>_________________________________________________________________________________________</span><img
+                    src="./media/logo.png" width="200px" height="50px" class="mt-3"
+                    alt=""><span>____________________________________________________________________________________</span>
+            </div>
+            <div class="icons  d-flex justify-content-center my-4 gap-3">
+                <div class="icon">
+                    <a href=""> <i class="fa-brands fa-facebook"></i></a>
+                </div>
+                <div class="icon">
+                    <a href="">
+                        <i class="fa-brands fa-x-twitter"></i>
+                        </i></a>
+                </div>
+
+                <div class="icon">
+                    <a href=""> <i class="fa-brands fa-instagram"></i></a>
+                </div>
+                <div class="icon">
+                    <a href=""> <i class="fa-brands fa-youtube"></i></a>
+                </div>
+
+                <div class="icon">
+                    <a href=""> <i class="fa-brands fa-pinterest"></i></a>
+                </div>
+                <div class="icon">
+                    <a href=""> <i class="fa-brands fa-linkedin"></i></a>
+                </div>
+
+            </div>
+
+            <div class="text-center mt-4">
+                <small class="text-white">&copy; 2025 BookMyShow clone by hareendran s. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
